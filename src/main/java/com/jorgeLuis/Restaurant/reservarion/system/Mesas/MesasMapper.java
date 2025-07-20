@@ -1,17 +1,16 @@
 package com.jorgeLuis.Restaurant.reservarion.system.Mesas;
 
-import com.jorgeLuis.Restaurant.reservarion.system.Usuarios.UsuariosModel;
 import org.springframework.stereotype.Component;
 
 @Component
-
 public class MesasMapper {
 
     public MesasModel map(MesasDTO mesasDTO) {
         MesasModel mesa = new MesasModel();
         mesa.setId(mesasDTO.getId());
         mesa.setStatus_mesa(mesasDTO.getStatus_mesa());
-        mesa.setUsuario(mesasDTO.getUsuario());
+        mesa.setNumero(mesasDTO.getNumero());
+        mesa.setCapacidade(mesasDTO.getCapacidade());
 
         return mesa;
     }
@@ -20,7 +19,8 @@ public class MesasMapper {
         MesasDTO mesa = new MesasDTO();
         mesa.setId(mesasModel.getId());
         mesa.setStatus_mesa(mesasModel.getStatus_mesa());
-        mesa.setUsuario(mesasModel.getUsuario());
+        mesa.setNumero(mesa.getNumero());
+        mesa.setCapacidade(mesa.getCapacidade());
 
         return mesa;
     }

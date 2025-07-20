@@ -22,8 +22,14 @@ public class UsuariosModel{
     @Column(name = "Nome")
     private String nome;
 
-    @OneToOne
-    @JoinColumn(name = "mesa_id", nullable = false)
-    private MesasModel mesa;
+    @Column(name = "Email", unique = true)
+    private String email;
+
+//    TODO: armazenar a senha, ver como posso fazer isso de forma segura.
+
+
+    @Column(name = "Role")
+    @Enumerated(EnumType.STRING)
+    private UsuarioRoleEnum role;
 
 }

@@ -24,8 +24,10 @@ public class MesasModel {
     @Enumerated(EnumType.STRING)
     private MesasStatusEnum status_mesa;
 
-    @OneToOne
-    @JoinColumn(name = "usuario_id", nullable = true)
-    private UsuariosModel usuario;
+    @Column(name = "Número da mesa")
+    private int numero;
+
+    @Column(name = "Capacidade")
+    private int capacidade;
 
 }

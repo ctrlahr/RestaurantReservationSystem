@@ -12,6 +12,7 @@ public class MesasDTO {
 
     private Long id;
     private MesasStatusEnum status_mesa;
-    private UsuariosModel usuario;
+    private int numero;
+    private int capacidade;
 
 }

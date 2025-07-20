@@ -12,6 +12,7 @@ public class UsuariosDTO {
 
     private Long id;
     private String nome;
-    private MesasModel mesa;
+    private String email;
+    private UsuarioRoleEnum role;
 
 }

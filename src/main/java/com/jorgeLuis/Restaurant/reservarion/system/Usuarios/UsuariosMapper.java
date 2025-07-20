@@ -9,7 +9,8 @@ public class UsuariosMapper {
         UsuariosModel usuario = new UsuariosModel();
         usuario.setId(usuario.getId());
         usuario.setNome(usuario.getNome());
-        usuario.setMesa(usuario.getMesa());
+        usuario.setEmail(usuario.getEmail());
+        usuario.setRole(usuario.getRole());
 
         return usuario;
     }
@@ -18,7 +19,8 @@ public class UsuariosMapper {
         UsuariosDTO usuario = new UsuariosDTO();
         usuario.setId(usuario.getId());
         usuario.setNome(usuario.getNome());
-        usuario.setMesa(usuario.getMesa());
+        usuario.setEmail(usuario.getEmail());
+        usuario.setRole(usuario.getRole());
 
         return usuario;
     }

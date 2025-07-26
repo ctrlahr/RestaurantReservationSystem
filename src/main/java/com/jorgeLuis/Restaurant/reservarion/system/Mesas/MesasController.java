@@ -5,11 +5,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("mesas")
 public class MesasController {
 
-    private MesasService mesasService;
+    private final MesasService mesasService;
 
     public MesasController(MesasService mesasService) {
         this.mesasService = mesasService;
@@ -20,7 +22,15 @@ public class MesasController {
         return "Boas vindas a tabela de mesas";
     }
 
-    @GetMapping("/listarmesasid/{id}")
+//    Listar todas as mesas cadastradas
+    @GetMapping("/listarmesas")
+    public List<MesasDTO> listarMesas() {
+        return mesasService.listarMesas();
+    }
+
+
+//    listar mesa cadastrada por id
+    @GetMapping("/listarmesas/{id}")
     public MesasDTO listarMesasPorId(@PathVariable Long id) {
         return mesasService.listarMesasPorId(id);
     }

@@ -35,4 +35,17 @@ public class MesasController {
         return mesasService.listarMesasPorId(id);
     }
 
+//    Criar uma mesa
+    @GetMapping("/criarmesas")
+    public String criarMesas() {
+        return "Funcionalidade em desenvolvimento";
+    }
+
+//    Status da mesa
+    @GetMapping("/statusmesa/{id}")
+    public MesasDTO statusMesa(@PathVariable Long id) {
+        return mesasService.statusMesa(id);
+    }
+
+
 }

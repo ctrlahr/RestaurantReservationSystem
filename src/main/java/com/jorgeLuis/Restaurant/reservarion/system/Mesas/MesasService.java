@@ -10,8 +10,8 @@ import java.util.stream.Collectors;
 @Service
 public class MesasService {
 
-    private MesasRepository mesasRepository;
-    private MesasMapper mesasMapper;
+    private final MesasRepository mesasRepository;
+    private final MesasMapper mesasMapper;
 
     public MesasService(MesasRepository mesasRepository, MesasMapper mesasMapper) {
         this.mesasRepository = mesasRepository;
@@ -31,8 +31,20 @@ public class MesasService {
 
 
 //    Listar mesa por id
-public MesasDTO listarMesasPorId(Long id) {
+    public MesasDTO listarMesasPorId(Long id) {
         Optional<MesasModel> mesa = mesasRepository.findById(id);
         return mesa.map(mesasMapper::map).orElse(null);
-}
+    }
+
+
+    //    TODO: Implementar que só irá mostrar o status da mesa o invés de tudo
+    // Status da mesa
+    public MesasDTO statusMesa(Long id) {
+        Optional<MesasModel> mesa = mesasRepository.findById(id);
+        return mesa.map(mesasMapper::map).orElse(null);
+    }
+
+
+
+
 }

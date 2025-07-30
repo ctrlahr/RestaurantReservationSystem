@@ -37,11 +37,12 @@ public class MesasService {
     }
 
 
-    //    TODO: Implementar que só irá mostrar o status da mesa o invés de tudo
     // Status da mesa
-    public MesasDTO statusMesa(Long id) {
+    public MesasStatusEnum statusMesa(Long id) {
         Optional<MesasModel> mesa = mesasRepository.findById(id);
-        return mesa.map(mesasMapper::map).orElse(null);
+                return mesa.map(mesasMapper::map)
+                .map(MesasDTO::getStatus_mesa)
+                .orElse(null);
     }
 
 

@@ -43,7 +43,7 @@ public class MesasController {
 
 //    Status da mesa
     @GetMapping("/statusmesa/{id}")
-    public MesasDTO statusMesa(@PathVariable Long id) {
+    public MesasStatusEnum statusMesa(@PathVariable Long id) {
         return mesasService.statusMesa(id);
     }
 

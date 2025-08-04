@@ -1,9 +1,6 @@
 package com.jorgeLuis.Restaurant.reservarion.system.Mesas;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,26 +20,26 @@ public class MesasController {
     }
 
 //    Listar todas as mesas cadastradas
-    @GetMapping("/listarmesas")
+    @GetMapping("/listar")
     public List<MesasDTO> listarMesas() {
         return mesasService.listarMesas();
     }
 
 
 //    listar mesa cadastrada por id
-    @GetMapping("/listarmesas/{id}")
+    @GetMapping("/listarporid/{id}")
     public MesasDTO listarMesasPorId(@PathVariable Long id) {
         return mesasService.listarMesasPorId(id);
     }
 
 //    Criar uma mesa
-    @GetMapping("/criarmesas")
-    public String criarMesas() {
-        return "Funcionalidade em desenvolvimento";
+    @PostMapping("/criar")
+    public MesasDTO criarMesas(@RequestBody MesasDTO mesa) {
+        return mesasService.criarMesa(mesa);
     }
 
 //    Status da mesa
-    @GetMapping("/statusmesa/{id}")
+    @GetMapping("/status/{id}")
     public MesasStatusEnum statusMesa(@PathVariable Long id) {
         return mesasService.statusMesa(id);
     }

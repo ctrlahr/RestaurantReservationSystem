@@ -45,6 +45,12 @@ public class MesasService {
                 .orElse(null);
     }
 
+//    Criar mesa
+    public MesasDTO criarMesa(MesasDTO mesasDTO) {
+        MesasModel mesa = mesasMapper.map(mesasDTO);
+        mesa = mesasRepository.save(mesa);
+        return mesasMapper.map(mesa);
+    }
 
 
 
